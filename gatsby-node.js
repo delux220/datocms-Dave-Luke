@@ -14,6 +14,13 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allDatoCmsPet {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allDatoCmsWork.edges.map(({ node: work }) => {
@@ -22,6 +29,15 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/work.js`),
           context: {
             slug: work.slug,
+          },
+        })
+      })
+      result.data.allDatoCmsPet.edges.map(({ node: pet }) => {
+        createPage({
+          path: `pets/${pet.slug}`,
+          component: path.resolve(`./src/templates/pet.js`),
+          context: {
+            slug: pet.slug,
           },
         })
       })

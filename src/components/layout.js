@@ -24,6 +24,7 @@ const TemplateWrapper = ({ children }) => {
             seoMetaTags {
               ...GatsbyDatoCmsSeoMetaTags
             }
+            title
             introTextNode {
               childMarkdownRemark {
                 html
@@ -50,7 +51,7 @@ const TemplateWrapper = ({ children }) => {
           <div className="container__sidebar">
             <div className="sidebar">
               <h6 className="sidebar__title">
-                <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
+                <Link to="/">{data.datoCmsHome.title}</Link>
               </h6>
               <div
                 className="sidebar__intro"
@@ -64,8 +65,21 @@ const TemplateWrapper = ({ children }) => {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/about">About Me</Link>
                 </li>
+                <li>
+                  <Link to="/pets">The Pets</Link>
+                </li>
+                <li>
+                  <Link to="/pets">Photography</Link>
+                </li>
+                <li>
+                  <Link to="/watercolors">Watercolors</Link>
+                </li>
+                <li>
+                  <Link to="/about">Technology</Link>
+                </li>
+                
               </ul>
               <p className="sidebar__social">
                 {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (

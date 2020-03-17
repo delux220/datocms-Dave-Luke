@@ -8,14 +8,14 @@ import Layout from "../components/layout"
 export default ({ data }) => (
   <Layout>
     <article className="sheet">
-      <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
+      <HelmetDatoCms seo={data.datoCmsPet.seoMetaTags} />
       <div className="sheet__inner">
-        <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
-        <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
+        <h1 className="sheet__title">{data.datoCmsPet.title}</h1>
+        <p className="sheet__lead">{data.datoCmsPet.excerpt}</p>
         <div className="sheet__slider">
           <Slider infinite={true} slidesToShow={2} arrows variableWidth={true}>
-            {data.datoCmsWork.gallery.map(({ fluid }) => (
-              <img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src}  />
+            {data.datoCmsPet.gallery.map(({ fluid }) => (
+              <img alt={data.datoCmsPet.title} key={fluid.src} src={fluid.src}  />
               
             ))}
           </Slider>
@@ -23,20 +23,18 @@ export default ({ data }) => (
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
+            __html: data.datoCmsPet.descriptionNode.childMarkdownRemark.html,
           }}
         />
-        <div className="sheet__gallery">
-          <Img fluid={data.datoCmsWork.coverImage.fluid} />
-        </div>
+        
       </div>
     </article>
   </Layout>
 )
 
 export const query = graphql`
-  query WorkQuery($slug: String!) {
-    datoCmsWork(slug: { eq: $slug }) {
+  query PetQuery($slug: String!) {
+    datoCmsPet(slug: { eq: $slug }) {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }

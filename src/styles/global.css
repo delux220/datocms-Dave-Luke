@@ -1,0 +1,53 @@
+.sidebar__menu li a {
+	font-family: 'Bellota Text';
+}
+
+.sidebar__intro {
+	font-family: 'Bellota Text';
+	color:#555;
+}
+
+p {
+	font-family: 'Bellota Text' !important;
+	color:#555;
+}
+
+
+.slick-slide img {
+	width:auto !important;
+	max-height:240px !important;
+	min-height:240px;
+}
+
+.sheet__slider {
+	max-height:240px;
+}
+p strong {
+	font-weight:700;
+	color:#111;
+}
+
+div.page-header {
+	padding:12px 40px;
+}
+
+h1.page-title {
+	padding-top:30px;
+	padding-bottom:12px;
+	font-family: 'Roboto Slab';
+	font-weight:700;
+	font-size:36px;
+	color:#444;
+
+}
+
+.sidebar__title a{
+	font-size:20px;
+	font-family: 'Roboto Slab';
+	text-transform:none;
+}
+
+h1.sheet__title {
+	font-family: 'Roboto Slab';
+	font-weight:700;
+}

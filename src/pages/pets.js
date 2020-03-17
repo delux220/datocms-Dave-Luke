@@ -4,26 +4,21 @@ import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 
-const IndexPage = ({ data }) => (
+const PetsPage = ({ data }) => (
   <Layout>
-  <div style={{display:'block', clear:'both'}} className="page-header">
-        <h1 className="page-title">Watercolors</h1>
-        <p className="">I started learning watercolors in March 2020.</p>
-      </div>
     <Masonry className="showcase">
-      
-      {data.allDatoCmsWork.edges.map(({ node: work }) => (
-        <div key={work.id} className="showcase__item">
+      {data.allDatoCmsPet.edges.map(({ node: pet }) => (
+        <div key={pet.id} className="showcase__item">
           <figure className="card">
-            <Link to={`/works/${work.slug}`} className="card__image">
-              <Img fluid={work.coverImage.fluid} />
+            <Link to={`/pets/${pet.slug}`} className="card__image">
+              <Img fluid={pet.coverImage.fluid} />
             </Link>
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <Link to={`/works/${work.slug}`}>{work.title}</Link>
+                <Link to={`/pets/${pet.slug}`}>{pet.title}</Link>
               </h6>
               <div className="card__description">
-                <p>{work.excerpt}</p>
+                <p>{pet.excerpt}</p>
               </div>
             </figcaption>
           </figure>
@@ -33,15 +28,16 @@ const IndexPage = ({ data }) => (
   </Layout>
 )
 
-export default IndexPage
+export default PetsPage
 
 export const query = graphql`
-  query IndexQuery {
-    allDatoCmsWork(sort: { fields: [position], order: ASC }) {
+  query PetsQuery {
+    allDatoCmsPet(sort: { fields: [position], order: ASC }) {
       edges {
         node {
           id
           title
+          description
           slug
           excerpt
           coverImage {
