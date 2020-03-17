@@ -61,25 +61,17 @@ const TemplateWrapper = ({ children }) => {
                 }}
               />
               <ul className="sidebar__menu">
+                
                 <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About Me</Link>
+                  <Link to="/">Watercolors</Link>
                 </li>
                 <li>
                   <Link to="/pets">The Pets</Link>
                 </li>
+               
                 <li>
-                  <Link to="/pets">Photography</Link>
+                  <Link to="/about">About Me</Link>
                 </li>
-                <li>
-                  <Link to="/watercolors">Watercolors</Link>
-                </li>
-                <li>
-                  <Link to="/about">Technology</Link>
-                </li>
-                
               </ul>
               <p className="sidebar__social">
                 {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
