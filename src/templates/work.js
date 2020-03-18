@@ -2,8 +2,9 @@ import React from 'react'
 import Slider from 'react-slick'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
-import { graphql } from 'gatsby'
+import { graphql , Link} from 'gatsby'
 import Layout from "../components/layout"
+
 
 export default ({ data }) => (
   <Layout>
@@ -13,9 +14,9 @@ export default ({ data }) => (
         <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
         <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
         <div className="sheet__slider">
-          <Slider infinite={true} slidesToShow={2} arrows variableWidth={true}>
+          <Slider infinite={true} slidesToShow={1} arrows={true} autoplay={true}>
             {data.datoCmsWork.gallery.map(({ fluid }) => (
-              <img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src}  />
+              <div><img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src}  /></div>
               
             ))}
           </Slider>
@@ -26,9 +27,10 @@ export default ({ data }) => (
             __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
           }}
         />
+        
         <div className="sheet__gallery">
           <Img fluid={data.datoCmsWork.coverImage.fluid} />
-        </div>
+        </div><ul class="sidebar__menu"><li><a href="/">Go Back</a></li></ul>
       </div>
     </article>
   </Layout>

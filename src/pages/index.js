@@ -7,8 +7,8 @@ import Layout from "../components/layout"
 const IndexPage = ({ data }) => (
   <Layout>
   <div style={{display:'block', clear:'both'}} className="page-header">
-        <h1 className="page-title">Watercolors</h1>
-        <p className="">I started learning watercolors in March 2020.</p>
+        <h1 className="page-title">My Watercolors</h1>
+        <p className="">I'm still very new to watercolors and painting in general, but am pleased with my progress. I share my work here!</p>
       </div>
     <Masonry className="showcase">
       
