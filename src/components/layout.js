@@ -61,9 +61,11 @@ const TemplateWrapper = ({ children }) => {
                 }}
               />
               <ul className="sidebar__menu">
-                
                 <li>
-                  <Link to="/">Watercolors</Link>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/watercolor">Watercolors</Link>
                 </li>
                 <li>
                   <Link to="/pets">The Pets</Link>

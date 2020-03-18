@@ -1,17 +1,51 @@
 .sidebar__menu li a {
 	font-family: 'Bellota Text';
+	padding-top:4px;
+	padding-bottom:4px;
 }
 
 .sidebar__intro {
 	font-family: 'Bellota Text';
 	color:#555;
 }
+.body p {
+	margin-bottom:18px;
+	color:#555;
+}
+
+.body a {
+	color: #69ACCE;
+}
+
 
 p {
 	font-family: 'Bellota Text' !important;
 	color:#555;
 }
 
+
+.myButton {
+	background-color:#69ACCE;
+	border-radius:0px;
+	border:1px solid #69ACCE;
+	display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:700;
+	font-family:'Roboto Slab';
+	font-size:14px;
+	padding:15px 30px;
+	text-decoration:none;
+	width:100%;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 
 
 p strong {
@@ -33,6 +67,23 @@ h1.page-title {
 
 }
 
+
+.sheet__slider {
+	background-color:#000;
+}
+
+.sheet__slider div {
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	 width:598px;
+	 text-align:center;
+}
+
+.sheet__slider div img {
+	display:block;
+	margin:auto;
+}
 
 .sidebar__title a{
 	font-size:20px;

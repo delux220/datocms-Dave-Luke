@@ -13,14 +13,15 @@ export default ({ data }) => (
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
         <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
-        <div className="sheet__slider">
+        {(data.datoCmsWork.gallery.length>1)&&<div className="sheet__slider">
           <Slider infinite={true} slidesToShow={1} arrows={true} autoplay={true}>
             {data.datoCmsWork.gallery.map(({ fluid }) => (
-              <div><img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src}  /></div>
+              <div><img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src} style={{maxHeight:'480px'}}/></div>
               
             ))}
           </Slider>
-        </div>
+        </div>}
+        <button className="myButton" style={{marginBottom:'28px', display:'block'}}>Buy Print for $9.99</button>
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
