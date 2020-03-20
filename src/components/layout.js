@@ -43,72 +43,91 @@ const TemplateWrapper = ({ children }) => {
         }
       `}
       render={data => (
-        <div className={`container ${showMenu ? "is-open" : ""}`}>
+        <div>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
-          />
-          <div className="container__sidebar">
-            <div className="sidebar">
-              <h6 className="sidebar__title">
-                <Link to="/">{data.datoCmsHome.title}</Link>
-              </h6>
-              <div
-                className="sidebar__intro"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html
-                }}
-              />
-              <ul className="sidebar__menu">
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/watercolor">Watercolors</Link>
-                </li>
-                <li>
-                  <Link to="/pets">The Pets</Link>
-                </li>
-               
-                <li>
-                  <Link to="/about">About Me</Link>
-                </li>
-              </ul>
-              <p className="sidebar__social">
-                {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-                  <a
-                    key={profile.profileType}
-                    href={profile.url}
-                    target="blank"
-                    className={`social social--${profile.profileType.toLowerCase()}`}
-                  >
-                    {" "}
-                  </a>
-                ))}
-              </p>
-              <div className="sidebar__copyright">
-                {data.datoCmsHome.copyright}
-              </div>
-            </div>
-          </div>
-          <div className="container__body">
-            <div className="container__mobile-header">
-              <div className="mobile-header">
-                <div className="mobile-header__menu">
-                  <a
-                    href="#"
-                    onClick={e => {
-                      e.preventDefault();
-                      setShowMenu(!showMenu);
-                    }}
-                  />
-                </div>
-                <div className="mobile-header__logo">
-                  <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-                </div>
-              </div>
-            </div>
+          >
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/flickr.js"></script>
+        <script src="/js/flexslider.min.js"></script>
+        <script src="/js/lightbox.min.js"></script>
+        <script src="/js/masonry.min.js"></script>
+        <script src="/js/twitterfetcher.min.js"></script>
+        <script src="/js/spectragram.min.js"></script>
+        <script src="/js/ytplayer.min.js"></script>
+        <script src="/js/countdown.min.js"></script>
+        <script src="/js/smooth-scroll.min.js"></script>
+        <script src="/js/parallax.js"></script>
+        <script src="/js/scripts.js"></script>
+          </HelmetDatoCms>
+          <div className="nav-container">
+            <a id="top"></a>
+            <nav>
+                <div className="nav-bar">
+                    <div className="module left">
+                        <Link to={"/"}>
+                            <span>DAVE<strong>LUKE</strong></span>
+                        </Link>
+                    </div>
+                    <div className="module widget-handle mobile-toggle right visible-sm visible-xs">
+                        <i className="ti-menu"></i>
+                    </div>
+                    <div className="module-group right">
+                        <div className="module left">
+                            <ul className="menu">
+                                <li>
+                                    <Link to={'/'}>
+                                        Home
+                                    </Link>
+                                    
+                                </li>
+                                <li className="has-dropdown">
+                                    <a href="#">
+                                        Portfolio
+                                    </a>
+                                    <ul className="mega-menu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <Link to={'/watercolor'}>Watercolor</Link>
+                                                </li>
+                                                <li>
+                                                    <Link to={'/photography'}>Photography</Link>
+                                                </li>
+                                                <li>
+
+                                                    <Link to={'/technology'}>Tech</Link>
+                                                </li>
+                                                
+                                            </ul>
+                                            </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <Link to={'/about'}>
+                                        About
+                                    </Link>
+
+                                </li>
+                                <li>
+                                    <Link to={'/about'}>
+                                        Contact
+                                    </Link>
+
+                                </li>
+
+                                </ul>
+                        </div>
+                        {/* end of menu module */}
+                        
+                        </div>
+                </div> 
+            </nav>
+        </div>
+        <div className="main-container">
             {children}
           </div>
         </div>
